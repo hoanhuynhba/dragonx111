@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Header HTML</title>
+    <script>
+        // Tạo một object JSON tùy chỉnh cho header
+        const customHeaders = {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer YourTokenHere"
+            // Thêm các header khác theo cần thiết
+        };
+
+        // Thêm các header vào trong <head>
+        for (const [key, value] of Object.entries(customHeaders)) {
+            const metaTag = document.createElement("meta");
+            metaTag.setAttribute("name", key);
+            metaTag.setAttribute("content", value);
+            document.head.appendChild(metaTag);
+        }
+    </script>
+</head>
+
+<body>
+    <!-- Phần nội dung của trang web -->
+    <h1>Welcome to Your Custom Header HTML</h1>
+    <p>This is the body of your webpage.</p>
+</body>
+
+</html>
